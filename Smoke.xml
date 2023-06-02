@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name = "Smoke Suite">				
+<test name = "Smoke Test">				
+<classes>				
+<class name = "reports.Project_Reports_Testng"/>	
+<class name = "reports.Employee_Reports_TestNG"/>
+<class name = "reports.Attendance_Summary_TestNG"/>		
+<class name = "projectinfo.Coustmers_TestNG"/>	
+<class name = "projectinfo.Projects_TestNG"/>		
+<class name = "attendance.My_Records_TestNG"/>	
+<class name = "attendance.Employee_Record_TestNG"/>	
+<class name = "attendance.Configuration_TestNg"/>	
+<class name = "timesheet.Employee_Time_Sheet_TestNg"/>	
+<class name = "timesheet.My_Time_Sheet_TestNG"/>	
+<class name = "attendance.Punch_In_Out_TestNG"/>	
+</classes>				
+</test>				
+</suite>				
