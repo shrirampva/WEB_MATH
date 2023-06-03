@@ -1,6 +1,8 @@
 package timesheet;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
+
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
@@ -56,11 +58,21 @@ public class Employee_Time_Sheet_TestNg {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@id='btnView']")).click();
 		Thread.sleep(3000);	
-		WebElement sheetWeek = driver.findElement(By.xpath("//select[@id='startDates']"));	
-		Select sel=new Select(sheetWeek);	
-		sel.selectByValue("0");	
-		WebElement status = driver.findElement(By.xpath("//*[@id=\"timesheet_status\"]/h2"));	
-		System.out.println(status.getText());	
+		
+		String value = "0";
+		List<WebElement> alldates = driver.findElements(By.xpath("//select[@id='startDates']"));
+		for (WebElement elements : alldates)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(value))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
+		WebElement reset = driver.findElement(By.xpath("//*[@id=\"btnReset\"]"));	
+		reset.click();
 		WebElement edit = driver.findElement(By.xpath("//input[@id='btnEdit']"));	
 		edit.click();	
 		Thread.sleep(3000);	
@@ -96,17 +108,13 @@ public class Employee_Time_Sheet_TestNg {
 		driver.findElement(By.xpath("//input[@id='initialRows_0_6']")).sendKeys("9:00");
 		driver.findElement(By.xpath("//input[@id='submitSave']")).click();	
 		Thread.sleep(1000);	
-		driver.findElement(By.xpath("//input[@id='btnSubmit']")).click();	
-		Thread.sleep(3000);	
-		driver.findElement(By.xpath("//*[@id=\"txtComment\"]")).sendKeys("Approved");
+		driver.findElement(By.xpath("//*[@id=\"btnEdit\"]")).click();
+		driver.findElement(By.xpath("//*[@id=\"submitSave\"]")).click();
 		driver.findElement(By.xpath("//*[@id=\"btnApprove\"]")).click();
 		Thread.sleep(10000);	
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
 		Files.copy(f1, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\employeetimesheet.png"));		
-		Thread.sleep(10000);	
-		File f11 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
-		Files.copy(f11, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\mytimesheet.png"));											
-
+		
 
 		
 }

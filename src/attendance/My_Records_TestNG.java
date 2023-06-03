@@ -1,6 +1,7 @@
 package attendance;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
@@ -11,13 +12,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-//import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.google.common.io.Files;
-//import org.openqa.selenium.Keys;
+
 public class My_Records_TestNG {
 	public static WebDriver driver;
 	public Workbook wb; 
@@ -59,9 +58,19 @@ public class My_Records_TestNG {
 		Select sel1=new Select(year);	
 		sel1.selectByValue("2023");
 		Thread.sleep(3000);	
-		driver.manage().timeouts().getImplicitWaitTimeout();
-		WebElement date = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[5]/td[1]/a"));
-		date.click();
+		String searchdate = "25";
+		List<WebElement> alldates = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+		for (WebElement elements : alldates)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(searchdate))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
+		
 		Thread.sleep(10000);	
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
 		Files.copy(f1, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\myrecords.png"));											

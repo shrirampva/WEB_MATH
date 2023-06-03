@@ -1,6 +1,8 @@
 package reports;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
+
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
@@ -71,8 +73,18 @@ public class Attendance_Summary_TestNG {
 		WebElement year = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[2]"));	
 		Select sel4=new Select(year);	
 		sel4.selectByValue("2023");
-		WebElement date = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[1]/td[4]/a"));	
-	    date.click();
+		String searchdate = "25";
+		List<WebElement> alldates = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+		for (WebElement elements : alldates)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(searchdate))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
 	    Thread.sleep(3000);	
 	    WebElement projectdaterange1 = driver.findElement(By.xpath("//*[@id=\"to_date\"]"));	
 		projectdaterange1.click();
@@ -83,8 +95,19 @@ public class Attendance_Summary_TestNG {
 		WebElement year1 = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[2]"));	
 		Select sel6=new Select(year1);	
 		sel6.selectByValue("2023");
-		WebElement date1 = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[5]/td[5]/a"));	
-	    date1.click();
+		String searchdate1 = "25";
+		List<WebElement> alldates1 = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+		for (WebElement elements : alldates1)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(searchdate1))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
+	
 	    WebElement view = driver.findElement(By.xpath("//*[@id=\"viewbutton\"]"));	
 	    view.click();
 	    Thread.sleep(10000);	

@@ -1,5 +1,7 @@
 package timesheet;
 import java.io.FileInputStream;
+import java.util.List;
+
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
@@ -41,27 +43,29 @@ public class My_Time_Sheet_TestNG {
 		driver.findElement(By.name(s.getCell(1, 3).getContents())).sendKeys(s.getCell(1, 6).getContents());											
 		driver.findElement(By.name(s.getCell(1, 4).getContents())).click();
 		WebElement time = driver.findElement(By.xpath("//*[@id=\"menu_time_viewTimeModule\"]/b"));	
-		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
-		Files.copy(f1, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\Screenshots\\Time.png"));
+	
 		Actions act=new Actions(driver);	
 		act.moveToElement(time).perform();	
 		Thread.sleep(3000);	
 		WebElement timeSheets = driver.findElement(By.xpath("//a[@id='menu_time_Timesheets']"));
-		File f2 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
-		Files.copy(f2, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\Screenshots\\Timesheets.png"));
+		
 		Actions act1=new Actions(driver); 	
 		act1.moveToElement(timeSheets).click().perform();
 		Thread.sleep(3000);	
 		WebElement mytimeSheets = driver.findElement(By.xpath("//a[@id='menu_time_viewMyTimesheet']"));	
-		File f3 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
-		Files.copy(f3, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\Screenshots\\MyTimesheet.png"));
 		act1.moveToElement(mytimeSheets).click().perform();	
-		WebElement sheetWeek = driver.findElement(By.xpath("//select[@id='startDates']"));	
-		Select sel=new Select(sheetWeek);	
-		sel.selectByValue("0");
-		Thread.sleep(3000);	
-		WebElement status = driver.findElement(By.xpath("//*[@id=\"timesheet_status\"]/h2"));	
-		System.out.println(status.getText());	
+		String value = "1";
+		List<WebElement> alldates = driver.findElements(By.xpath("//select[@id='startDates']"));
+		for (WebElement elements : alldates)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(value))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
 		WebElement edit = driver.findElement(By.xpath("//input[@id='btnEdit']"));	
 		edit.click();	
 		Thread.sleep(3000);	
@@ -96,13 +100,12 @@ public class My_Time_Sheet_TestNG {
 		driver.findElement(By.xpath("//input[@id='initialRows_0_6']")).clear();
 		driver.findElement(By.xpath("//input[@id='initialRows_0_6']")).sendKeys("9:00");
 		driver.findElement(By.xpath("//input[@id='submitSave']")).click();	
-		Thread.sleep(1000);	
-		//driver.findElement(By.xpath("//input[@id='btnSubmit']")).click();	
-		Thread.sleep(3000);	
+		Thread.sleep(1000);		
 		WebElement newstatus = driver.findElement(By.xpath("//*[@id=\"timesheet_status\"]/h2"));	
 		System.out.println(newstatus.getText());
-		
-		
+		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
+		Files.copy(f1, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\mytimesheet.png"));
+
 }
 }
 

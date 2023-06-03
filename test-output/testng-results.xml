@@ -2,38 +2,38 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-02T11:31:33Z" name="Default suite" finished-at="2023-06-02T11:32:16Z" duration-ms="42699">
+  <suite started-at="2023-06-03T20:27:13Z" name="Default suite" finished-at="2023-06-03T20:29:07Z" duration-ms="113937">
     <groups>
     </groups>
-    <test started-at="2023-06-02T11:31:33Z" name="Default test" finished-at="2023-06-02T11:32:16Z" duration-ms="42699">
-      <class name="timesheet.Employee_Time_Sheet_TestNg">
-        <test-method is-config="true" signature="LaunchApp()[pri:0, instance:timesheet.Employee_Time_Sheet_TestNg@54eb2b70]" started-at="2023-06-02T11:31:33Z" name="LaunchApp" finished-at="2023-06-02T11:31:43Z" duration-ms="10399" status="PASS">
+    <test started-at="2023-06-03T20:27:13Z" name="Default test" finished-at="2023-06-03T20:29:07Z" duration-ms="113937">
+      <class name="attendance.Employee_Record_TestNG">
+        <test-method is-config="true" signature="LaunchApp()[pri:0, instance:attendance.Employee_Record_TestNG@54eb2b70]" started-at="2023-06-03T20:27:13Z" name="LaunchApp" finished-at="2023-06-03T20:27:25Z" duration-ms="11340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApp -->
-        <test-method signature="ValidationApp()[pri:0, instance:timesheet.Employee_Time_Sheet_TestNg@54eb2b70]" started-at="2023-06-02T11:31:43Z" name="ValidationApp" finished-at="2023-06-02T11:32:15Z" duration-ms="31621" status="FAIL">
+        <test-method signature="ValidationApp()[pri:0, instance:attendance.Employee_Record_TestNG@54eb2b70]" started-at="2023-06-03T20:27:25Z" name="ValidationApp" finished-at="2023-06-03T20:29:07Z" duration-ms="102548" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='initialRows_0_projectName']"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="btnPunchOut"]"}
   (Session info: chrome=114.0.5735.90)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'b19b418e60'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9e9c44a17c70ebc9280d8d3504786e9a, findElement {using=xpath, value=//input[@id='initialRows_0_projectName']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\SREEHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60558}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60558/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9e9c44a17c70ebc9280d8d3504786e9a]]>
+Command: [e72c16bc66835664049ea020ff96c838, findElement {using=xpath, value=//*[@id="btnPunchOut"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\SREEHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63607}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63607/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e72c16bc66835664049ea020ff96c838]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='initialRows_0_projectName']"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="btnPunchOut"]"}
   (Session info: chrome=114.0.5735.90)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'b19b418e60'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9e9c44a17c70ebc9280d8d3504786e9a, findElement {using=xpath, value=//input[@id='initialRows_0_projectName']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\SREEHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60558}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60558/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9e9c44a17c70ebc9280d8d3504786e9a
+Command: [e72c16bc66835664049ea020ff96c838, findElement {using=xpath, value=//*[@id="btnPunchOut"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\SREEHA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63607}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63607/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e72c16bc66835664049ea020ff96c838
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -48,7 +48,7 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at timesheet.Employee_Time_Sheet_TestNg.ValidationApp(Employee_Time_Sheet_TestNg.java:67)
+at attendance.Employee_Record_TestNG.ValidationApp(Employee_Record_TestNG.java:113)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
@@ -78,11 +78,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidationApp -->
-        <test-method is-config="true" signature="CloseApp()[pri:0, instance:timesheet.Employee_Time_Sheet_TestNg@54eb2b70]" started-at="2023-06-02T11:32:15Z" name="CloseApp" finished-at="2023-06-02T11:32:16Z" duration-ms="624" status="PASS">
+        <test-method is-config="true" signature="CloseApp()[pri:0, instance:attendance.Employee_Record_TestNG@54eb2b70]" started-at="2023-06-03T20:29:07Z" name="CloseApp" finished-at="2023-06-03T20:29:07Z" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseApp -->
-      </class> <!-- timesheet.Employee_Time_Sheet_TestNg -->
+      </class> <!-- attendance.Employee_Record_TestNG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

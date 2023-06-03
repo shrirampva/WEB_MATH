@@ -1,13 +1,13 @@
 package reports;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
+
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-//import org.openqa.selenium.OutputType;
-//import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -75,8 +75,18 @@ public class Project_Reports_Testng {
 		WebElement year1 = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[2]"));	
 		Select sel4=new Select(year1);	
 		sel4.selectByValue("2023");
-		WebElement date1 = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[5]/td[5]/a"));	
-	    date1.click();
+		String searchdate = "25";
+		List<WebElement> alldates = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+		for (WebElement elements : alldates)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(searchdate))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
 	    Thread.sleep(3000);	
 	    WebElement check = driver.findElement(By.xpath("//*[@id=\"only_include_approved_timesheets\"]"));	
 	    check.click();

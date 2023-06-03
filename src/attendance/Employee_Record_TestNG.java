@@ -1,6 +1,8 @@
 package attendance;									
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
+
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
@@ -30,7 +32,7 @@ public class Employee_Record_TestNG {
 	}
 	@AfterTest		
 	public void CloseApp() { 		
-	driver.close();		
+	//driver.close();		
 	}		
 	@Test						
 	public void ValidationApp() throws Throwable, Exception {						
@@ -63,24 +65,56 @@ public class Employee_Record_TestNG {
 		Select sel1=new Select(year);	
 		Thread.sleep(3000);	
 		sel1.selectByValue("2023");
-		WebElement date = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[5]/td[5]/a"));
-		date.click();
+		String date = "1";
+		List<WebElement> alldates = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+		for (WebElement elements : alldates)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(date))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
+		
+	
 		WebElement view = driver.findElement(By.xpath("//input[@id='btView']"));
 		view.click();
 		WebElement addattendance = driver.findElement(By.xpath("//*[@id=\"btnPunchOut\"]"));
 		addattendance.click();
 		WebElement in = driver.findElement(By.xpath("//input[@name='button']"));
 		in.click();
+		WebElement attendancedate1 = driver.findElement(By.xpath("//input[@id='attendance_date']"));
+		attendancedate1.click();
+		Thread.sleep(3000);
+		WebElement month1 = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[1]"));	
+		Select sel123=new Select(month1);	
+		sel123.selectByValue("5");	
+		Thread.sleep(3000);	
+		WebElement year11 = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[2]"));	
+		Select sel111=new Select(year11);	
+		Thread.sleep(3000);	
+		sel111.selectByValue("2023");
+		String date1 = "2";
+		Thread.sleep(60000);
+		
+		List<WebElement> alldates1 = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+		for (WebElement elements : alldates1)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(date1))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
+			
 		WebElement addattendance1 = driver.findElement(By.xpath("//*[@id=\"btnPunchOut\"]"));
 		addattendance1.click();
 		WebElement out = driver.findElement(By.xpath("//input[@name='button']"));
 		out.click();
-		WebElement in1 = driver.findElement(By.xpath("//input[@name='button']"));
-		in1.click();
-		WebElement addattendance2 = driver.findElement(By.xpath("//*[@id=\"btnPunchOut\"]"));
-		addattendance2.click();
-		WebElement out1 = driver.findElement(By.xpath("//input[@name='button']"));
-		out1.click();
 		Thread.sleep(10000);	
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
 		Files.copy(f1, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\employeerecords.png"));											

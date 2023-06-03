@@ -1,6 +1,7 @@
 package attendance;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
@@ -10,14 +11,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-//import org.openqa.selenium.support.ui.Select;
-//import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.google.common.io.Files;
-//import org.openqa.selenium.Keys;
 public class Punch_In_Out_TestNG {
 	public static WebDriver driver;
 	public Workbook wb; 
@@ -51,20 +49,60 @@ public class Punch_In_Out_TestNG {
 		Thread.sleep(3000);	
 		WebElement punchin = driver.findElement(By.xpath("//a[@id='menu_attendance_punchIn']"));	
 		act1.moveToElement(punchin).click().perform();
-		driver.findElement(By.xpath("//*[@id=\"note\"]")).sendKeys("In");
-		WebElement in = driver.findElement(By.xpath("//*[@id=\"btnPunch\"]"));	
-		act1.moveToElement(in).click().perform();
+		WebElement attendancedate = driver.findElement(By.xpath("//input[@id='attendance_date']"));
+		attendancedate.click();
+		WebElement month = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[1]"));	
+		Select sel=new Select(month);	
+		sel.selectByValue("5");	
+		WebElement year = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[2]"));	
+		Select sel1=new Select(year);	
+		sel1.selectByValue("2023");
 		Thread.sleep(3000);	
-		driver.navigate().to("https://adminjon-osondemand.orangehrm.com/symfony/web/index.php/attendance/punchOut");
-		driver.findElement(By.xpath("//*[@id=\"note\"]")).sendKeys("Out");
+		String searchdate = "3";
+		List<WebElement> alldates = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+		for (WebElement elements : alldates)
+		{
+			String dt=elements.getText();
+			
+		    if (dt.equals(searchdate))
+		    {
+		        elements.click(); 
+		        break;
+		    }
+		 		}
+	
+		WebElement in = driver.findElement(By.xpath("//*[@id=\"btnPunch\"]"));	
+		in.click();
+		Thread.sleep(3000);	
+		WebElement attendancedate1 = driver.findElement(By.xpath("//input[@id='attendance_date']"));
+		attendancedate1.click();
+		Thread.sleep(3000);
+		WebElement month11 = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[1]"));	
+		Select sel12=new Select(month11);	
+		sel12.selectByValue("5");	
+		WebElement year11 = driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[2]"));	
+		Select sel11=new Select(year11);	
+		sel11.selectByValue("2023");
+		Thread.sleep(3000);	
+		String searchdate11 = "4";
+		List<WebElement> alldates11 = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+		for (WebElement elements : alldates11)
+		{
+			String dt=elements.getText();
+			
+		   if (dt.equals(searchdate11))
+		    {
+		       elements.click(); 
+		       break;
+		    }
+		 		}
+		
+		
 		WebElement out = driver.findElement(By.xpath("//*[@id=\"btnPunch\"]"));	
-		act1.moveToElement(out).click().perform();
-		Thread.sleep(10000);	
+		out.click();
+		Thread.sleep(3000);	
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
-		Files.copy(f1, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\employeerecords.png"));											
-		Thread.sleep(10000);	
-		File f12 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
-		Files.copy(f12, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\punchinout.png"));											
+		Files.copy(f1, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\employeerecords.png"));																					
 
 }
 }

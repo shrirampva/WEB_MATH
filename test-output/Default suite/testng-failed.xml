@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="timesheet.Employee_Time_Sheet_TestNg">
+      <class name="attendance.Employee_Record_TestNG">
         <methods>
           <include name="LaunchApp"/>
-          <include name="ValidationApp"/>
           <include name="CloseApp"/>
+          <include name="ValidationApp"/>
         </methods>
-      </class> <!-- timesheet.Employee_Time_Sheet_TestNg -->
+      </class> <!-- attendance.Employee_Record_TestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
