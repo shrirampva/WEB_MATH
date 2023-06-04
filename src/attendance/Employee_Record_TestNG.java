@@ -32,7 +32,7 @@ public class Employee_Record_TestNG {
 	}
 	@AfterTest		
 	public void CloseApp() { 		
-	//driver.close();		
+	driver.close();		
 	}		
 	@Test						
 	public void ValidationApp() throws Throwable, Exception {						
@@ -83,6 +83,7 @@ public class Employee_Record_TestNG {
 		view.click();
 		WebElement addattendance = driver.findElement(By.xpath("//*[@id=\"btnPunchOut\"]"));
 		addattendance.click();
+		
 		WebElement in = driver.findElement(By.xpath("//input[@name='button']"));
 		in.click();
 		WebElement attendancedate1 = driver.findElement(By.xpath("//input[@id='attendance_date']"));
@@ -96,26 +97,24 @@ public class Employee_Record_TestNG {
 		Select sel111=new Select(year11);	
 		Thread.sleep(3000);	
 		sel111.selectByValue("2023");
-		String date1 = "2";
-		Thread.sleep(60000);
+		String date1 = "1";
+		//Thread.sleep(60000);
 		
 		List<WebElement> alldates1 = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
 		for (WebElement elements : alldates1)
 		{
-			String dt=elements.getText();
+		String dt=elements.getText();
 			
-		    if (dt.equals(date1))
+		  if (dt.equals(date1))
 		    {
 		        elements.click(); 
 		        break;
-		    }
+		   }
 		 		}
-			
-		WebElement addattendance1 = driver.findElement(By.xpath("//*[@id=\"btnPunchOut\"]"));
-		addattendance1.click();
+		
 		WebElement out = driver.findElement(By.xpath("//input[@name='button']"));
 		out.click();
-		Thread.sleep(10000);	
+		Thread.sleep(1000);	
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);											
 		Files.copy(f1, new File("D:\\ECLIPS\\ORANGE_HRM(TIME)\\ScreenShots\\employeerecords.png"));											
 

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Smoke Suite]">
   <test thread-count="5" name="Smoke Test(failed)">
     <classes>
-      <class name="attendance.Employee_Record_TestNG">
+      <class name="timesheet.Employee_Time_Sheet_TestNg">
         <methods>
           <include name="LaunchApp"/>
-          <include name="CloseApp"/>
           <include name="ValidationApp"/>
+          <include name="CloseApp"/>
         </methods>
-      </class> <!-- attendance.Employee_Record_TestNG -->
+      </class> <!-- timesheet.Employee_Time_Sheet_TestNg -->
     </classes>
   </test> <!-- Smoke Test(failed) -->
 </suite> <!-- Failed suite [Smoke Suite] -->

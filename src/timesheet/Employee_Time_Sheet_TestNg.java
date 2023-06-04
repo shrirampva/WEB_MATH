@@ -71,10 +71,17 @@ public class Employee_Time_Sheet_TestNg {
 		        break;
 		    }
 		 		}
+		
+		
 		WebElement reset = driver.findElement(By.xpath("//*[@id=\"btnReset\"]"));	
 		reset.click();
-		WebElement edit = driver.findElement(By.xpath("//input[@id='btnEdit']"));	
-		edit.click();	
+		String defaultcondition = "edit";
+		switch(defaultcondition) {
+			default :WebElement edit = driver.findElement(By.xpath("//input[@id='btnEdit']"));	
+			edit.click();	
+		    break;
+		}
+				
 		Thread.sleep(3000);	
 		WebElement row = driver.findElement(By.xpath("//input[@id='initialRows_0_projectName']"));	
 		row.clear();	
