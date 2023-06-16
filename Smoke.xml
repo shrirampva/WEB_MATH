@@ -2,17 +2,22 @@
 <suite name = "Smoke Suite">				
 <test name = "Smoke Test">				
 <classes>				
-<class name = "reports.Project_Reports_Testng"/>	
-<class name = "reports.Employee_Reports_TestNG"/>
-<class name = "reports.Attendance_Summary_TestNG"/>		
-<class name = "projectinfo.Coustmers_TestNG"/>	
-<class name = "projectinfo.Projects_TestNG"/>		
-<class name = "attendance.My_Records_TestNG"/>	
-<class name = "attendance.Employee_Record_TestNG"/>	
-<class name = "attendance.Configuration_TestNg"/>	
-<class name = "timesheet.Employee_Time_Sheet_TestNg"/>	
-<class name = "timesheet.My_Time_Sheet_TestNG"/>	
-<class name = "attendance.Punch_In_Out_TestNG"/>	
+<class name = "decimals.Decimal_To_Fraction_TestNG"/>	
+<class name = "decimals.Fraction_To_Decimal_TestNG"/>
+<class name = "fractions.Add_TestNg"/>		
+<class name = "fractions.Converting_TestNg"/>	
+<class name = "fractions.Divide_TestNg"/>		
+<class name = "fractions.Multiply_TestNg"/>	
+<class name = "fractions.Reduce_TestNg"/>	
+<class name = "fractions.Subtract_TestNg"/>	
+<class name = "numbercrunching.With_Varibles_to_TestNG"/>	
+<class name = "numbers.Factor_TestNg"/>	
+<class name = "numbers.GFC_TestNG"/>
+<class name = "numbers.LCM_TestNG"/>
+<class name = "numbers.Pronouncing_TestNG"/>
+<class name = "scientificnotation.Converting_TestNg"/>
+<class name = "scientificnotation.Dividewith_TestNg"/>
+<class name = "scientificnotation.Multiplywith_TestNg"/>	
 </classes>				
 </test>				
 </suite>				
