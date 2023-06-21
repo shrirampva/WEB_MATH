@@ -2,22 +2,22 @@
 <suite name = "Smoke Suite">				
 <test name = "Smoke Test">				
 <classes>				
-<class name = "decimals.Decimal_To_Fraction_TestNG"/>	
-<class name = "decimals.Fraction_To_Decimal_TestNG"/>
-<class name = "fractions.Add_TestNg"/>		
-<class name = "fractions.Converting_TestNg"/>	
-<class name = "fractions.Divide_TestNg"/>		
-<class name = "fractions.Multiply_TestNg"/>	
-<class name = "fractions.Reduce_TestNg"/>	
-<class name = "fractions.Subtract_TestNg"/>	
-<class name = "numbercrunching.With_Varibles_to_TestNG"/>	
-<class name = "numbers.Factor_TestNg"/>	
-<class name = "numbers.GFC_TestNG"/>
-<class name = "numbers.LCM_TestNG"/>
-<class name = "numbers.Pronouncing_TestNG"/>
-<class name = "scientificnotation.Converting_TestNg"/>
-<class name = "scientificnotation.Dividewith_TestNg"/>
-<class name = "scientificnotation.Multiplywith_TestNg"/>	
+<class name = "decimals.Decimal_To_Fraction"/>	
+<class name = "decimals.Fraction_To_Decimal"/>
+<class name = "fractions.Add"/>		
+<class name = "fractions.Converting"/>	
+<class name = "fractions.Divide"/>		
+<class name = "fractions.Multiply"/>	
+<class name = "fractions.Reduce"/>	
+<class name = "fractions.Subtract"/>	
+<class name = "numbercrunching.With_Varibles_to"/>	
+<class name = "numbers.Factor"/>	
+<class name = "numbers.GFC"/>
+<class name = "numbers.LCM"/>
+<class name = "numbers.Pronouncing"/>
+<class name = "scientificnotation.Converting"/>
+<class name = "scientificnotation.Dividewith"/>
+<class name = "scientificnotation.Multiplywith"/>	
 </classes>				
 </test>				
 </suite>				
