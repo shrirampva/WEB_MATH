@@ -2,6 +2,7 @@ package numbers;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 import com.google.common.io.Files;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -38,22 +39,22 @@ public class Factor {
 		WebElement gnma = driver.findElement(By.xpath(s1.getRow(1).getCell(1).getStringCellValue()));	
 		Actions act=new Actions(driver);	
 		act.moveToElement(gnma).click().perform();
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement factor = driver.findElement(By.xpath(s1.getRow(2).getCell(1).getStringCellValue()));	
 		Actions act1=new Actions(driver); 	
 		act1.moveToElement(factor).click().perform();
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement name = driver.findElement(By.xpath(s1.getRow(3).getCell(1).getStringCellValue()));	
 		act1.moveToElement(name).click().perform();
 		name.sendKeys(Keys.ARROW_DOWN);
 		name.sendKeys(Keys.ENTER);
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement type = driver.findElement(By.xpath(s1.getRow(4).getCell(1).getStringCellValue()));
 		type.clear();	
 		type.sendKeys("16");
 		driver.findElement(By.xpath(s1.getRow(5).getCell(1).getStringCellValue())).click();
 			}
-		Thread.sleep(10000);
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		}
 		catch (Exception e) {
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
@@ -62,6 +63,6 @@ public class Factor {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 }
-	}
+}
 }
 }

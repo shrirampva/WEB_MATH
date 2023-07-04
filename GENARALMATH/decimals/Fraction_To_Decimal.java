@@ -2,6 +2,8 @@ package decimals;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import jxl.Sheet;
 import jxl.Workbook;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -41,29 +43,29 @@ public class Fraction_To_Decimal {
 		WebElement gnma = driver.findElement(By.xpath(s1.getRow(1).getCell(1).getStringCellValue()));	
 		Actions act=new Actions(driver);	
 		act.moveToElement(gnma).click().perform();
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement ftod = driver.findElement(By.xpath(s1.getRow(2).getCell(1).getStringCellValue()));	
 		Actions act1=new Actions(driver); 	
 		act1.moveToElement(ftod).click().perform();
 		WebElement ftdtop = driver.findElement(By.xpath(s1.getRow(3).getCell(1).getStringCellValue()));
 		ftdtop.clear();
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		ftdtop.sendKeys("23");	
 		Thread.sleep(3000);	
 		WebElement ftdbtm = driver.findElement(By.xpath(s1.getRow(4).getCell(1).getStringCellValue()));
 		ftdbtm.clear();
 		Thread.sleep(3000);	
 		ftdbtm.sendKeys("32");	
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement ftd = driver.findElement(By.xpath(s1.getRow(5).getCell(1).getStringCellValue()));
 		ftd.clear();
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		ftd.sendKeys("3");	
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement covit = driver.findElement(By.xpath(s1.getRow(6).getCell(1).getStringCellValue()));
 		covit.click();
 			}
-		Thread.sleep(10000);	
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		}
 		catch (Exception e) {
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
@@ -73,5 +75,5 @@ public class Fraction_To_Decimal {
 			e1.printStackTrace();										
 }
 }
-	}
+}
 }

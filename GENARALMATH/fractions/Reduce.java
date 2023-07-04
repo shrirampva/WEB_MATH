@@ -2,6 +2,7 @@ package fractions;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import jxl.Sheet;
 import jxl.Workbook;
@@ -43,14 +44,14 @@ public class Reduce {
 		WebElement gnma = driver.findElement(By.xpath(s1.getRow(1).getCell(1).getStringCellValue()));	
 		Actions act=new Actions(driver);	
 		act.moveToElement(gnma).click().perform();
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement redu = driver.findElement(By.xpath(s1.getRow(2).getCell(1).getStringCellValue()));	
 		Actions act1=new Actions(driver); 	
 		act1.moveToElement(redu).click().perform();
 		WebElement top = driver.findElement(By.xpath(s1.getRow(3).getCell(1).getStringCellValue()));
 		top.clear();
 		top.sendKeys("6");	
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement bottom = driver.findElement(By.xpath(s1.getRow(4).getCell(1).getStringCellValue()));
 		bottom.clear();
 		bottom.sendKeys("63");	
@@ -58,7 +59,7 @@ public class Reduce {
 		WebElement reduceit = driver.findElement(By.xpath(s1.getRow(5).getCell(1).getStringCellValue()));
 		reduceit.click();
 			}
-		Thread.sleep(10000);	
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);	
 		}
 		catch(Exception e) {
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

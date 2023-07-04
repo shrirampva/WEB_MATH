@@ -2,6 +2,8 @@ package decimals;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import jxl.Sheet;
 import jxl.Workbook;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -41,17 +43,17 @@ public class Decimal_To_Fraction {
 		WebElement gnma = driver.findElement(By.xpath(s1.getRow(1).getCell(1).getStringCellValue()));	
 		Actions act=new Actions(driver);	
 		act.moveToElement(gnma).click().perform();
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement dtof = driver.findElement(By.xpath(s1.getRow(1).getCell(2).getStringCellValue()));	
 		Actions act1=new Actions(driver); 	
 		act1.moveToElement(dtof).click().perform();
 		WebElement dtf = driver.findElement(By.xpath(s1.getRow(3).getCell(1).getStringCellValue()));
 		dtf.sendKeys("2.32");	
-		Thread.sleep(3000);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement covit = driver.findElement(By.xpath(s1.getRow(4).getCell(1).getStringCellValue()));
 		covit.click();
 		}
-			Thread.sleep(10000);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		}
 	catch (Exception e) {
 		File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);		
