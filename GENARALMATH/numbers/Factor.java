@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import com.google.common.io.Files;
+import decimals.Decimal_To_Fraction;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.By;
@@ -17,7 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-public class Factor {
+public class Factor extends Decimal_To_Fraction {
 	public static WebDriver driver;
 	@BeforeTest 	
 	public void launchApp()  {					

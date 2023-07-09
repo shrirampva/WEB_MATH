@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import jxl.Sheet;
 import jxl.Workbook;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -19,7 +18,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.google.common.io.Files;
-public class Add {
+import decimals.Decimal_To_Fraction;
+public class Add extends Decimal_To_Fraction {
 	public static WebDriver driver;
 	public Workbook wb; 
 	public Sheet sh;

@@ -18,7 +18,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.google.common.io.Files;
-public class Dividewith {
+import decimals.Decimal_To_Fraction;
+public class Dividewith extends Decimal_To_Fraction{
 	public static WebDriver driver;
 	public Workbook wb; 
 	public Sheet sh;
@@ -34,7 +35,7 @@ public class Dividewith {
 	driver.close();
 }
 	@Test						
-	public void validationApp() throws Throwable, Exception {	
+	public void validationApp() {	
 		try {
 			FileInputStream f = new FileInputStream("D:\\ECLIPS\\HDFC\\Automation\\WEB_MATH\\testfolder\\Scientificnotation.xls");		
 			try (HSSFWorkbook wb1 = new HSSFWorkbook(f)) {

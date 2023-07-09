@@ -18,7 +18,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.google.common.io.Files;
-public class Multiplywith {
+import decimals.Decimal_To_Fraction;
+public class Multiplywith extends Decimal_To_Fraction{
 	public static WebDriver driver;
 	public Workbook wb; 
 	public Sheet sh;
